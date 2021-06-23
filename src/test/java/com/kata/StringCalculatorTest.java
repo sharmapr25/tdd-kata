@@ -22,4 +22,11 @@ public class StringCalculatorTest
         int sum = stringCalculator.add("1");
         assertEquals(1, sum);
     }
+
+    @Test
+    public void add_shouldReturnThree_WhenGivenInputHaveNumberOneAndTwo(){
+        StringCalculator stringCalculator = new StringCalculator();
+        int sum = stringCalculator.add("1,2");
+        assertEquals(3, sum);
+    }
 }
