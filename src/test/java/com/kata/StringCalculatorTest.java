@@ -29,4 +29,18 @@ public class StringCalculatorTest
         int sum = stringCalculator.add("1,2");
         assertEquals(3, sum);
     }
+
+    @Test
+    public void add_shouldReturnThree_WhenGivenNumbersStringAreOneAndTwoWithNextLineDelimiter() {
+        StringCalculator stringCalculator = new StringCalculator();
+        int sum = stringCalculator.add("1\n2");
+        assertEquals(3, sum);
+    }
+
+    @Test
+    public void add_shouldReturnSix_WhenGivenNumbersStringAreOneTwoAndThreeWithNextLineAndCommaDelimiter(){
+        StringCalculator stringCalculator = new StringCalculator();
+        int sum = stringCalculator.add("1\n2,3");
+        assertEquals(6, sum);
+    }
 }
