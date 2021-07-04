@@ -43,4 +43,11 @@ public class StringCalculatorTest
         int sum = stringCalculator.add("1\n2,3");
         assertEquals(6, sum);
     }
+
+    @Test
+    public void add_shouldReturnThree_WhenGivenNumbersStringAreOneAndTwoWithDefinedCustomDelimiter() {
+        StringCalculator stringCalculator = new StringCalculator();
+        int sum = stringCalculator.add("//;\n1;2");
+        assertEquals(3, sum);
+    }
 }
