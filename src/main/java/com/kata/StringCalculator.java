@@ -28,6 +28,10 @@ public class StringCalculator{
         List<String> numbersList = getNumbers(numbers);
         int sum = 0;
         for(String number: numbersList){
+            if(Integer.valueOf(number) < 0){
+                throw new NegativeNumbersAreNotAllowedException();
+            }
+
             sum += Integer.valueOf(number);
         }
         return sum;
