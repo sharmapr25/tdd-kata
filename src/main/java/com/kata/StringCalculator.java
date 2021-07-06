@@ -6,6 +6,7 @@ public class StringCalculator{
     private String DEFAULT_DELIMITERS = "\n,";
     private String DOUBLE_SLASH = "//";
     private String NEW_LINE_SEPERATOR = "\n";
+    private int calledCount = 0;
 
 
     public StringCalculator(){
@@ -24,6 +25,7 @@ public class StringCalculator{
     };
 
     public int add(String numbers){
+        this.calledCount += 1;
         if(numbers.length() == 0) return 0;
         List<String> numbersList = getNumbers(numbers);
         int sum = 0;
@@ -42,4 +44,8 @@ public class StringCalculator{
         }
         return sum;
     };
+
+    public int getCalledCount(){
+        return this.calledCount;
+    }
 }
