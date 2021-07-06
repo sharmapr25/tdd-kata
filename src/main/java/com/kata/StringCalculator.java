@@ -29,7 +29,7 @@ public class StringCalculator{
         int sum = 0;
         for(String number: numbersList){
             if(Integer.valueOf(number) < 0){
-                throw new NegativeNumbersAreNotAllowedException();
+                throw new NegativeNumbersAreNotAllowedException(number);
             }
 
             sum += Integer.valueOf(number);
