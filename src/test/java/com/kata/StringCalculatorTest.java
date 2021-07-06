@@ -57,10 +57,10 @@ public class StringCalculatorTest
     }
 
     @Test
-    public void add_shouldThrowNegativeNumbersAreNotAllowed_WhenGivenNumberIsNegative() {
+    public void add_shouldThrowNegativeNumbersAreNotAllowed_WhenGivenInputHasMultipleNegativeNumbers() {
         StringCalculator stringCalculator = new StringCalculator();
         exceptionRule.expect(NegativeNumbersAreNotAllowedException.class);
-        exceptionRule.expectMessage("negatives are not allowed -1");
-        stringCalculator.add("-1,2");
+        exceptionRule.expectMessage("negatives are not allowed -1 -2");
+        stringCalculator.add("-1,-2");
     }
 }

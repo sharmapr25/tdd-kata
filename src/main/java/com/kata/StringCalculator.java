@@ -27,12 +27,18 @@ public class StringCalculator{
         if(numbers.length() == 0) return 0;
         List<String> numbersList = getNumbers(numbers);
         int sum = 0;
+        String negativeNumbersForException = "";
+
         for(String number: numbersList){
             if(Integer.valueOf(number) < 0){
-                throw new NegativeNumbersAreNotAllowedException(number);
+                negativeNumbersForException += " "+number;
             }
-
-            sum += Integer.valueOf(number);
+            else{
+                sum += Integer.valueOf(number);
+            }
+        }
+        if(negativeNumbersForException.length() > 0){
+            throw new NegativeNumbersAreNotAllowedException(negativeNumbersForException);
         }
         return sum;
     };

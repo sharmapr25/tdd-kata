@@ -1,15 +1,15 @@
 package com.kata;
 
 public class NegativeNumbersAreNotAllowedException extends RuntimeException{
-  private String number;
+  private String numbers;
 
-  public NegativeNumbersAreNotAllowedException(String number){
+  public NegativeNumbersAreNotAllowedException(String numbers){
     super();
-    this.number = number;
+    this.numbers = numbers;
   };
 
   @Override
   public String getMessage() {
-    return "negatives are not allowed "+ number;
+    return "negatives are not allowed"+ numbers;
   }
 }
