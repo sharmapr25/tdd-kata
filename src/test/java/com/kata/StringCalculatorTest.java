@@ -78,4 +78,11 @@ public class StringCalculatorTest
         int countOfAddMethodCalls = stringCalculator.getCalledCount();
         assertEquals(1, countOfAddMethodCalls);
     };
+
+    @Test
+    public void add_shouldReturnTwo_whenGivenNumbersAreTwoAndThousandOne() {
+        StringCalculator stringCalculator = new StringCalculator();
+        int sum = stringCalculator.add("1001,2");
+        assertEquals(2, sum);
+    };
 }

@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class StringCalculator{
     private String DEFAULT_DELIMITERS = "\n,";
     private String DOUBLE_SLASH = "//";
+    private int THOUSAND = 1000;
     private String NEW_LINE_SEPERATOR = "\n";
     private int calledCount = 0;
 
@@ -31,13 +32,12 @@ public class StringCalculator{
         int sum = 0;
         String negativeNumbersForException = "";
 
-        for(String number: numbersList){
+        for(String numberString: numbersList){
+            int number = Integer.valueOf(numberString);
             if(Integer.valueOf(number) < 0){
                 negativeNumbersForException += " "+number;
             }
-            else{
-                sum += Integer.valueOf(number);
-            }
+            sum += number > THOUSAND ? 0: number;
         }
         if(negativeNumbersForException.length() > 0){
             throw new NegativeNumbersAreNotAllowedException(negativeNumbersForException);
